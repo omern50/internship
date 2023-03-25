@@ -1,0 +1,109 @@
+.tree {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.node {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.node:hover {
+  background-color: #f1f1f1;
+}
+
+.node > * {
+  margin-right: 10px;
+}
+
+.node-text {
+  font-weight: bold;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: #ccc;
+  margin-right: 10px;
+}
+
+.line:last-child {
+  display: none;
+}
+
+.expand-icon:before {
+  content: "+";
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 12px;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.expand-icon.expanded:before {
+  transform: rotate(45deg);
+}
+
+.collapse-icon:before {
+  content: "-";
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 12px;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.collapse-icon.collapsed:before {
+  transform: rotate(-90deg);
+}
+
+.tree {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tree li {
+  margin: 0;
+  padding: 0 1em;
+  position: relative;
+}
+
+.tree li::before,
+.tree li::after {
+  content: '';
+  left: -20px;
+  position: absolute;
+  right: auto;
+}
+
+.tree li::before {
+  border-left: 1px solid #ccc;
+  bottom: 50px;
+  height: 100%;
+  top: 0;
+}
+
+.tree li::after {
+  border-top: 1px solid #ccc;
+  height: 20px;
+  top: 25px;
+}
+
+.tree li:last-child::before {
+  height: 30px;
+}
+
+.tree .tree-label {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+.tree .tree-toggle {
+  cursor: pointer;
+}

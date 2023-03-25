@@ -1,0 +1,44 @@
+/* Tree.css */
+
+/* Styles for the expand/collapse icons */
+.tree span {
+  display: inline-block;
+  width: 12px;
+  text-align: center;
+}
+
+/* Styles for the root node */
+.tree > li > div {
+  font-weight: bold;
+  color: #1E90FF;
+  background-color: #F5F5F5;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Styles for the child nodes */
+.tree ul li > div {
+  color: #555;
+  background-color: #FFFFFF;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Styles for the selected node */
+.tree li.selected > div {
+  background-color: #ADD8E6;
+}
+
+/* Styles for the expanded nodes */
+.tree > li ul {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.tree > li.expanded ul {
+  max-height: 1000px;
+  overflow: hidden;
+}
